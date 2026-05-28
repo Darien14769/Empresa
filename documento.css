@@ -1,0 +1,726 @@
+/* HOJA DE ESTILOS - ACCESORIOS E&C */
+
+/* 1. RESETEO GENERAL */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #fafaf8;
+  color: #333333;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+/* 2. BARRA DE NAVEGACIÓN */
+.barra-navegacion {
+  background-color: #fce0e5; /* Rosado pastel */
+  padding: 10px 40px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.contenedor-navegacion {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu-navegacion > ul {
+  display: flex;
+  gap: 30px;
+}
+
+.menu-navegacion > ul > li > a {
+  font-size: 13px;
+  font-weight: 600;
+  color: #555555;
+  letter-spacing: 1px;
+  padding: 10px 0;
+  display: inline-block;
+  transition: color 0.3s;
+}
+
+.menu-navegacion > ul > li > a:hover {
+  color: #a97a82;
+}
+
+/* MENÚ DESPLEGABLE */
+.desplegable {
+  position: relative;
+}
+
+.boton-desplegable i {
+  font-size: 10px;
+  margin-left: 2px;
+}
+
+.menu-desplegable {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #ffffff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border: 1px solid #efefef;
+  min-width: 130px;
+  text-align: center;
+  display: none;
+}
+
+.menu-desplegable li a {
+  display: block;
+  padding: 10px 15px;
+  font-size: 13px;
+  color: #444444;
+  transition: background-color 0.3s;
+}
+
+.menu-desplegable li a:hover {
+  background-color: #fce0e5;
+}
+
+/* Mostrar menú al pasar el puntero */
+.desplegable:hover .menu-desplegable {
+  display: block;
+}
+
+.iconos-navegacion {
+  display: flex;
+  gap: 20px;
+  font-size: 16px;
+  color: #555555;
+}
+
+.iconos-navegacion a:hover {
+  color: #a97a82;
+}
+
+.icono-carrito {
+  position: relative;
+}
+
+.conteo-carrito {
+  position: absolute;
+  top: -8px;
+  right: -10px;
+  background-color: #a97a82;
+  color: white;
+  font-size: 10px;
+  padding: 2px 5px;
+  border-radius: 50%;
+}
+
+/* 3. HERO / BANNER PRINCIPAL */
+.banner-principal {
+  position: relative;
+  background-image: url("https://images.unsplash.com/photo-1573408301185-9146fe634ad0?auto=format&fit=crop&q=80&w=1200");
+  background-size: cover;
+  background-position: center;
+  height: 480px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 10%;
+}
+
+.capa-oscura {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.contenedor-banner {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  justify-content: space-between;
+}
+
+.lado-decorativo {
+  width: 35%;
+  display: flex;
+  align-items: center;
+}
+
+.flores-banner {
+  width: 260px;
+  height: 260px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 5px solid white;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.contenido-banner {
+  text-align: right;
+  max-width: 550px;
+}
+
+.contenido-banner h2 {
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 4px;
+  color: #555555;
+  margin-bottom: 5px;
+}
+
+.contenido-banner h1 {
+  font-family: "Georgia", serif;
+  font-size: 42px;
+  font-style: italic;
+  font-weight: normal;
+  color: #ffffff;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+  line-height: 1.2;
+  margin-bottom: 25px;
+}
+
+.boton-primario {
+  display: inline-block;
+  background-color: #b46d78; /* Tono rosa/vino de la interfaz */
+  color: #ffffff;
+  padding: 10px 24px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  border-radius: 20px;
+  transition: background-color 0.3s;
+}
+
+.boton-primario:hover {
+  background-color: #96545f;
+}
+
+/* 4. ENVOLTORIO CENTRAL FLOTANTE */
+.envoltorio-principal {
+  max-width: 1000px;
+  margin: -40px auto 60px auto;
+  position: relative;
+  z-index: 10;
+}
+
+.titulo-seccion {
+  text-align: center;
+  font-size: 18px;
+  letter-spacing: 3px;
+  color: #444444;
+  margin-bottom: 25px;
+  font-weight: 600;
+}
+
+/* 5. SECCIÓN TIKTOK CAROUSEL */
+.seccion-tiktok {
+  background-color: #ffffff;
+  padding: 30px 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  margin-bottom: 25px;
+}
+
+.contenedor-carrusel {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.ruta-carrusel {
+  display: flex;
+  gap: 15px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 10px 5px;
+  width: 100%;
+}
+
+.ruta-carrusel::-webkit-scrollbar {
+  display: none; /* Esconde barra de scroll nativa */
+}
+
+.boton-carrusel {
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: absolute;
+  z-index: 20;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.boton-anterior {
+  left: -15px;
+}
+.boton-siguiente {
+  right: -15px;
+}
+
+.tarjeta-tiktok {
+  flex: 0 0 calc(20% - 12px);
+  min-width: 160px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.marco-celular {
+  width: 100%;
+  height: 260px;
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+  border: 3px solid #333333;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  margin-bottom: 12px;
+}
+
+.marco-celular img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.usuario-tiktok {
+  position: absolute;
+  bottom: 8px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 9px;
+  color: #ffffff;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 2px 0;
+}
+
+.boton-secundario {
+  background-color: #b46d78;
+  color: #ffffff;
+  font-size: 10px;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 15px;
+  text-align: center;
+  width: 100%;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+  transition: background-color 0.3s;
+}
+
+.boton-secundario:hover {
+  background-color: #96545f;
+}
+
+/* 6. CUADRÍCULA DE PRODUCTOS DESTACADOS */
+.seccion-productos {
+  background-color: #ffffff;
+  padding: 40px 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.cuadracula-productos {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.tarjeta-producto {
+  background-color: #ffffff;
+  border-radius: 6px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.contenedor-imagen-producto {
+  width: 100%;
+  height: 200px;
+  background-color: #f4f4f2;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.contenedor-imagen-producto img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s;
+}
+
+.tarjeta-producto:hover .contenedor-imagen-producto img {
+  transform: scale(1.05);
+}
+
+.informacion-producto {
+  padding: 12px 5px;
+  text-align: center;
+}
+
+.informacion-producto h3 {
+  font-size: 13px;
+  font-weight: 400;
+  color: #555555;
+  margin-bottom: 5px;
+}
+
+.informacion-producto .precio {
+  font-size: 14px;
+  font-weight: 600;
+  color: #333333;
+  margin-bottom: 10px;
+}
+
+.boton-carrito {
+  background-color: #b46d78;
+  color: #ffffff;
+  border: none;
+  width: 100%;
+  padding: 8px 0;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.boton-carrito:hover {
+  background-color: #96545f;
+}
+
+/* 7. PIE DE PÁGINA (DORADO METÁLICO) */
+.pie-pagina {
+  background: linear-gradient(to right, #dfba73, #ead39e, #dfba73);
+  padding: 30px 40px;
+  color: #4a4a4a;
+}
+
+.contenedor-pie {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.pie-pagina h4 {
+  font-size: 13px;
+  letter-spacing: 2px;
+  margin-bottom: 15px;
+  color: #333333;
+}
+
+.cuadracula-enlaces {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px 30px;
+  font-size: 12px;
+}
+
+.cuadracula-enlaces a:hover {
+  text-decoration: underline;
+}
+
+.boletin-pie {
+  width: 40%;
+}
+
+.formulario-boletin {
+  display: flex;
+  gap: 10px;
+}
+
+.formulario-boletin input {
+  flex: 1;
+  padding: 8px 12px;
+  border: 1px solid #cdb172;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 4px;
+  font-size: 12px;
+}
+
+.formulario-boletin input:focus {
+  outline: none;
+  background-color: #ffffff;
+}
+
+.formulario-boletin button {
+  background-color: #b46d78;
+  color: white;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 4px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.formulario-boletin button:hover {
+  background-color: #96545f;
+}
+
+.redes-pie {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.iconos-sociales {
+  display: flex;
+  gap: 15px;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.iconos-sociales a:hover {
+  color: #ffffff;
+}
+
+.usuario-oficial-pie {
+  font-size: 11px;
+  font-weight: 600;
+}
+
+/* 8. BOTÓN FLOATING DE WHATSAPP */
+.whatsapp-flotante {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #25d366;
+  color: white;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  transition: transform 0.3s;
+}
+
+.whatsapp-flotante:hover {
+  transform: scale(1.1);
+}
+
+/* RESPONSIVO BÁSICO */
+@media (max-width: 768px) {
+  .cuadracula-productos {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .contenedor-pie {
+    flex-direction: column;
+    gap: 30px;
+  }
+  .boletin-pie {
+    width: 100%;
+  }
+  .redes-pie {
+    align-items: flex-start;
+  }
+}
+.imagen-logotipo img {
+  height: 80px; /* Controla la altura del logo */
+  width: auto; /* Mantiene la proporción original de tu imagen */
+}
+
+/* ==========================================================================
+   ESTILOS ADICIONALES PARA LA SECCIÓN DE CONTACTO (SPA)
+   ========================================================================== */
+
+.seccion-contacto {
+  background-color: #ffffff;
+  padding: 40px 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.encabezado-contacto {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.encabezado-contacto h2 {
+  font-size: 24px;
+  letter-spacing: 2px;
+  color: #333333;
+  margin-bottom: 8px;
+}
+
+.encabezado-contacto p {
+  font-size: 14px;
+  color: #666666;
+}
+
+.bloque-contacto {
+  display: flex;
+  gap: 30px;
+}
+
+/* Formulario (Lado Izquierdo) */
+.formulario-contacto {
+  flex: 1.2;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.formulario-contacto input,
+.formulario-contacto textarea {
+  width: 100%;
+  padding: 12px 18px;
+  border: 1px solid #cccccc;
+  border-radius: 25px; /* Bordes redondeados idénticos a la imagen */
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.formulario-contacto textarea {
+  border-radius: 15px; /* Menos redondeado para el área de texto */
+  resize: none;
+}
+
+.formulario-contacto input:focus,
+.formulario-contacto textarea:focus {
+  border-color: #b46d78;
+}
+
+.boton-enviar-mensaje {
+  background-color: #b46d78; /* Color vino/rosa oscuro de la imagen */
+  color: #ffffff;
+  border: none;
+  padding: 12px;
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.boton-enviar-mensaje:hover {
+  background-color: #96545f;
+}
+
+/* Tarjetas Informativas (Lado Derecho) */
+.tarjetas-informacion-contacto {
+  flex: 0.8;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.tarjeta-info-contacto {
+  background-color: #fce0e5; /* Fondo rosado pastel suave */
+  padding: 20px;
+  border-radius: 12px;
+  color: #4a4a4a;
+}
+
+.tarjeta-info-contacto h5 {
+  font-size: 15px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #333333;
+  text-align: center;
+}
+
+.tarjeta-info-contacto p {
+  font-size: 13px;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.tarjeta-info-contacto p i {
+  color: #b46d78;
+}
+
+.iconos-sociales-contacto {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  font-size: 24px;
+  margin-top: 5px;
+}
+
+.iconos-sociales-contacto a {
+  color: #b46d78;
+  transition: color 0.3s;
+}
+
+.iconos-sociales-contacto a:hover {
+  color: #96545f;
+}
+
+/* Ajuste Responsivo para pantallas pequeñas */
+@media (max-width: 768px) {
+  .bloque-contacto {
+    flex-direction: column;
+  }
+}
+
+/* REGLA REQUERIDA PARA ALINEAR LA IMAGEN DEL LOGO AL MENÚ (Petición anterior) */
+.contenedor-navegacion {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 50px;
+}
+
+.iconos-navegacion {
+  margin-left: auto;
+}
+/* AJUSTE DEL CONTENEDOR FLOTANTE CENTRAL */
+.envoltorio-principal {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  position: relative;
+  /* Quitamos cualquier margen superior excesivo que esté empujando el contenido hacia abajo */
+  margin-top: 0;
+}
+
+/* AJUSTE ESPECÍFICO PARA LA VISTA DE CONTACTO */
+.seccion-contacto {
+  background-color: #ffffff;
+  padding: 40px 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+
+  /* Agregamos un margen superior controlado para que respire, pero sin dejar un hueco gigante */
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
