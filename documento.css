@@ -55,7 +55,7 @@ img {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  gap: 50px;
+  gap: clamp(15px, 4vw, 50px); /* Ajuste elástico del espacio junto al logo */
 }
 
 .imagen-logotipo img {
@@ -65,17 +65,26 @@ img {
 
 .menu-navegacion > ul {
   display: flex;
-  gap: 30px;
+  gap: clamp(
+    10px,
+    2.5vw,
+    30px
+  ); /* El espacio entre enlaces se reduce con la pantalla */
 }
 
 .menu-navegacion > ul > li > a {
-  font-size: 13px;
+  font-size: clamp(
+    11px,
+    0.9vw + 4px,
+    13px
+  ); /* Reducción de tipografía automatizada */
   font-weight: 600;
   color: #555555;
   letter-spacing: 1px;
   padding: 10px 0;
   display: inline-block;
   transition: color 0.3s;
+  white-space: nowrap; /* Impide que un enlace se rompa en dos renglones */
 }
 
 .menu-navegacion > ul > li > a:hover {
@@ -705,6 +714,15 @@ img {
 
 /* PANTALLAS MEDIANAS (TABLETS O COMPUTADORAS PEQUEÑAS - Menos de 1024px) */
 @media (max-width: 1024px) {
+  .contenedor-navegacion {
+    gap: 20px; /* Estrecha la barra reduciendo espacios vacíos */
+  }
+  .menu-navegacion > ul {
+    gap: 15px; /* Acerca los links para que no se desborden horizontalmente */
+  }
+  .menu-navegacion > ul > li > a {
+    font-size: 11px; /* Fuerza un tamaño compacto óptimo en tablets */
+  }
   .envoltorio-principal {
     padding: 0 15px;
   }
@@ -721,18 +739,31 @@ img {
   /* Barra de Navegación */
   .contenedor-navegacion {
     flex-wrap: wrap;
-    gap: 15px;
+    gap: 10px;
+    justify-content: space-between; /* El logo queda a la izquierda y los iconos a la derecha */
   }
   .menu-navegacion {
-    order: 3; /* Envía el menú hacia abajo en móviles */
+    order: 3; /* Envía el menú a una nueva línea independiente abajo */
     width: 100%;
+    background-color: rgba(
+      255,
+      255,
+      255,
+      0.4
+    ); /* Pequeño realce visual de fondo */
+    padding: 6px;
+    border-radius: 6px;
   }
   .menu-navegacion > ul {
-    justify-content: space-between;
-    gap: 10px;
+    justify-content: center; /* Centra perfectamente los links en móviles */
+    gap: 15px;
+  }
+  .menu-navegacion > ul > li > a {
+    font-size: 12px; /* Letra legible y cómoda para pulsar con el dedo */
+    padding: 5px 0;
   }
   .iconos-navegacion {
-    margin-left: auto;
+    margin-left: 0; /* Quita el margen forzado izquierdo */
   }
 
   /* Hero Banner */
@@ -794,9 +825,13 @@ img {
 /* DISPOSITIVOS MÓVILES MUY PEQUEÑOS (Menos de 480px) */
 @media (max-width: 480px) {
   .menu-navegacion > ul {
-    flex-direction: column; /* Menú vertical para pantallas súper compactas */
-    align-items: center;
-    gap: 5px;
+    flex-direction: row; /* Mantiene la fila pero distribuye con flexibilidad */
+    flex-wrap: wrap; /* Si la pantalla es diminuta, los links bajan escalonados con gracia */
+    justify-content: center;
+    gap: 12px;
+  }
+  .menu-navegacion > ul > li > a {
+    font-size: 11px;
   }
   .cuadracula-productos {
     grid-template-columns: 1fr; /* Una columna por producto */
@@ -805,3 +840,4 @@ img {
     font-size: 26px;
   }
 }
+/* version2 */
