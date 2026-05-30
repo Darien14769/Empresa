@@ -1,6 +1,8 @@
 /* HOJA DE ESTILOS - ACCESORIOS E&C */
 
-/* 1. RESETEO GENERAL */
+/* ==========================================================================
+   1. RESETEO GENERAL Y CONFIGURACIONES BASE
+   ========================================================================== */
 * {
   margin: 0;
   padding: 0;
@@ -23,10 +25,24 @@ ul {
   list-style: none;
 }
 
-/* 2. BARRA DE NAVEGACIÓN */
+/* Soporte elástico general para las nuevas etiquetas de imágenes adaptativas */
+picture {
+  display: block;
+  width: 100%;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ==========================================================================
+   2. BARRA DE NAVEGACIÓN
+   ========================================================================== */
 .barra-navegacion {
   background-color: #fce0e5; /* Rosado pastel */
-  padding: 10px 40px;
+  padding: 10px 20px;
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -37,8 +53,14 @@ ul {
   max-width: 1200px;
   margin: 0 auto;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
+  gap: 50px;
+}
+
+.imagen-logotipo img {
+  height: 80px; /* Controla la altura del logo */
+  width: auto; /* Mantiene la proporción original */
 }
 
 .menu-navegacion > ul {
@@ -95,7 +117,6 @@ ul {
   background-color: #fce0e5;
 }
 
-/* Mostrar menú al pasar el puntero */
 .desplegable:hover .menu-desplegable {
   display: block;
 }
@@ -105,6 +126,7 @@ ul {
   gap: 20px;
   font-size: 16px;
   color: #555555;
+  margin-left: auto;
 }
 
 .iconos-navegacion a:hover {
@@ -126,7 +148,9 @@ ul {
   border-radius: 50%;
 }
 
-/* 3. HERO / BANNER PRINCIPAL */
+/* ==========================================================================
+   3. HERO / BANNER PRINCIPAL
+   ========================================================================== */
 .banner-principal {
   position: relative;
   background-image: url("https://images.unsplash.com/photo-1573408301185-9146fe634ad0?auto=format&fit=crop&q=80&w=1200");
@@ -136,7 +160,7 @@ ul {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  padding-right: 10%;
+  padding: 0 10%;
 }
 
 .capa-oscura {
@@ -200,7 +224,7 @@ ul {
 
 .boton-primario {
   display: inline-block;
-  background-color: #b46d78; /* Tono rosa/vino de la interfaz */
+  background-color: #b46d78;
   color: #ffffff;
   padding: 10px 24px;
   font-size: 12px;
@@ -214,12 +238,16 @@ ul {
   background-color: #96545f;
 }
 
-/* 4. ENVOLTORIO CENTRAL FLOTANTE */
+/* ==========================================================================
+   4. ENVOLTORIO CENTRAL FLOTANTE Y SECCIONES
+   ========================================================================== */
 .envoltorio-principal {
-  max-width: 1000px;
-  margin: -40px auto 60px auto;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
   position: relative;
   z-index: 10;
+  margin-top: 0;
 }
 
 .titulo-seccion {
@@ -231,7 +259,9 @@ ul {
   font-weight: 600;
 }
 
-/* 5. SECCIÓN TIKTOK CAROUSEL */
+/* ==========================================================================
+   5. SECCIÓN TIKTOK CAROUSEL
+   ========================================================================== */
 .seccion-tiktok {
   background-color: #ffffff;
   padding: 30px 20px;
@@ -257,7 +287,7 @@ ul {
 }
 
 .ruta-carrusel::-webkit-scrollbar {
-  display: none; /* Esconde barra de scroll nativa */
+  display: none;
 }
 
 .boton-carrusel {
@@ -301,6 +331,7 @@ ul {
   margin-bottom: 12px;
 }
 
+.marco-celular picture,
 .marco-celular img {
   width: 100%;
   height: 100%;
@@ -337,7 +368,9 @@ ul {
   background-color: #96545f;
 }
 
-/* 6. CUADRÍCULA DE PRODUCTOS DESTACADOS */
+/* ==========================================================================
+   6. CUADRÍCULA DE PRODUCTOS DESTACADOS
+   ========================================================================== */
 .seccion-productos {
   background-color: #ffffff;
   padding: 40px 20px;
@@ -367,6 +400,7 @@ ul {
   overflow: hidden;
 }
 
+.contenedor-imagen-producto picture,
 .contenedor-imagen-producto img {
   width: 100%;
   height: 100%;
@@ -415,7 +449,139 @@ ul {
   background-color: #96545f;
 }
 
-/* 7. PIE DE PÁGINA (DORADO METÁLICO) */
+/* ==========================================================================
+   7. SECCIÓN DE CONTACTO
+   ========================================================================== */
+.seccion-contacto {
+  background-color: #ffffff;
+  padding: 40px 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.encabezado-contacto {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.encabezado-contacto h2 {
+  font-size: 24px;
+  letter-spacing: 2px;
+  color: #333333;
+  margin-bottom: 8px;
+}
+
+.encabezado-contacto p {
+  font-size: 14px;
+  color: #666666;
+}
+
+.bloque-contacto {
+  display: flex;
+  gap: 30px;
+}
+
+.formulario-contacto {
+  flex: 1.2;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.formulario-contacto input,
+.formulario-contacto textarea {
+  width: 100%;
+  padding: 12px 18px;
+  border: 1px solid #cccccc;
+  border-radius: 25px;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.formulario-contacto textarea {
+  border-radius: 15px;
+  resize: none;
+}
+
+.formulario-contacto input:focus,
+.formulario-contacto textarea:focus {
+  border-color: #b46d78;
+}
+
+.boton-enviar-mensaje {
+  background-color: #b46d78;
+  color: #ffffff;
+  border: none;
+  padding: 12px;
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.boton-enviar-mensaje:hover {
+  background-color: #96545f;
+}
+
+.tarjetas-informacion-contacto {
+  flex: 0.8;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.tarjeta-info-contacto {
+  background-color: #fce0e5;
+  padding: 20px;
+  border-radius: 12px;
+  color: #4a4a4a;
+}
+
+.tarjeta-info-contacto h5 {
+  font-size: 15px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #333333;
+  text-align: center;
+}
+
+.tarjeta-info-contacto p {
+  font-size: 13px;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.tarjeta-info-contacto p i {
+  color: #b46d78;
+}
+
+.iconos-sociales-contacto {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  font-size: 24px;
+  margin-top: 5px;
+}
+
+.iconos-sociales-contacto a {
+  color: #b46d78;
+  transition: color 0.3s;
+}
+
+.iconos-sociales-contacto a:hover {
+  color: #96545f;
+}
+
+/* ==========================================================================
+   8. PIE DE PÁGINA
+   ========================================================================== */
 .pie-pagina {
   background: linear-gradient(to right, #dfba73, #ead39e, #dfba73);
   padding: 30px 40px;
@@ -508,7 +674,9 @@ ul {
   font-weight: 600;
 }
 
-/* 8. BOTÓN FLOATING DE WHATSAPP */
+/* ==========================================================================
+   9. BOTÓN FLOATING DE WHATSAPP
+   ========================================================================== */
 .whatsapp-flotante {
   position: fixed;
   bottom: 20px;
@@ -531,11 +699,86 @@ ul {
   transform: scale(1.1);
 }
 
-/* RESPONSIVO BÁSICO */
-@media (max-width: 768px) {
-  .cuadracula-productos {
-    grid-template-columns: repeat(2, 1fr);
+/* ==========================================================================
+   10. MEDIA QUERIES (REGLAS DE DISEÑO RESPONSIVO)
+   ========================================================================== */
+
+/* PANTALLAS MEDIANAS (TABLETS O COMPUTADORAS PEQUEÑAS - Menos de 1024px) */
+@media (max-width: 1024px) {
+  .envoltorio-principal {
+    padding: 0 15px;
   }
+  .cuadracula-productos {
+    grid-template-columns: repeat(3, 1fr); /* Baja de 4 a 3 columnas */
+  }
+  .banner-principal {
+    padding: 0 5%;
+  }
+}
+
+/* DISPOSITIVOS MÓVILES (Celulares y Tablets en vertical - Menos de 768px) */
+@media (max-width: 768px) {
+  /* Barra de Navegación */
+  .contenedor-navegacion {
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+  .menu-navegacion {
+    order: 3; /* Envía el menú hacia abajo en móviles */
+    width: 100%;
+  }
+  .menu-navegacion > ul {
+    justify-content: space-between;
+    gap: 10px;
+  }
+  .iconos-navegacion {
+    margin-left: auto;
+  }
+
+  /* Hero Banner */
+  .banner-principal {
+    height: auto;
+    padding: 40px 20px;
+    justify-content: center;
+  }
+  .contenedor-banner {
+    flex-direction: column-reverse; /* Coloca el texto encima y la foto debajo */
+    gap: 20px;
+    text-align: center;
+  }
+  .lado-decorativo {
+    width: 100%;
+    justify-content: center;
+  }
+  .flores-banner {
+    width: 200px;
+    height: 200px;
+  }
+  .contenido-banner {
+    text-align: center;
+    max-width: 100%;
+  }
+  .contenido-banner h1 {
+    font-size: 32px;
+  }
+
+  /* Cuadrícula de Productos */
+  .cuadracula-productos {
+    grid-template-columns: repeat(2, 1fr); /* Cambia a 2 columnas */
+    gap: 15px;
+  }
+
+  /* Sección de Contacto */
+  .bloque-contacto {
+    flex-direction: column; /* Apila el formulario y las tarjetas */
+  }
+  .formulario-contacto,
+  .tarjetas-informacion-contacto {
+    flex: none;
+    width: 100%;
+  }
+
+  /* Pie de Página */
   .contenedor-pie {
     flex-direction: column;
     gap: 30px;
@@ -547,180 +790,18 @@ ul {
     align-items: flex-start;
   }
 }
-.imagen-logotipo img {
-  height: 80px; /* Controla la altura del logo */
-  width: auto; /* Mantiene la proporción original de tu imagen */
-}
 
-/* ==========================================================================
-   ESTILOS ADICIONALES PARA LA SECCIÓN DE CONTACTO (SPA)
-   ========================================================================== */
-
-.seccion-contacto {
-  background-color: #ffffff;
-  padding: 40px 30px;
-  border-radius: 8px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-}
-
-.encabezado-contacto {
-  text-align: center;
-  margin-bottom: 30px;
-}
-
-.encabezado-contacto h2 {
-  font-size: 24px;
-  letter-spacing: 2px;
-  color: #333333;
-  margin-bottom: 8px;
-}
-
-.encabezado-contacto p {
-  font-size: 14px;
-  color: #666666;
-}
-
-.bloque-contacto {
-  display: flex;
-  gap: 30px;
-}
-
-/* Formulario (Lado Izquierdo) */
-.formulario-contacto {
-  flex: 1.2;
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
-
-.formulario-contacto input,
-.formulario-contacto textarea {
-  width: 100%;
-  padding: 12px 18px;
-  border: 1px solid #cccccc;
-  border-radius: 25px; /* Bordes redondeados idénticos a la imagen */
-  font-size: 14px;
-  outline: none;
-  transition: border-color 0.3s;
-}
-
-.formulario-contacto textarea {
-  border-radius: 15px; /* Menos redondeado para el área de texto */
-  resize: none;
-}
-
-.formulario-contacto input:focus,
-.formulario-contacto textarea:focus {
-  border-color: #b46d78;
-}
-
-.boton-enviar-mensaje {
-  background-color: #b46d78; /* Color vino/rosa oscuro de la imagen */
-  color: #ffffff;
-  border: none;
-  padding: 12px;
-  font-size: 14px;
-  font-weight: bold;
-  letter-spacing: 1px;
-  border-radius: 25px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.boton-enviar-mensaje:hover {
-  background-color: #96545f;
-}
-
-/* Tarjetas Informativas (Lado Derecho) */
-.tarjetas-informacion-contacto {
-  flex: 0.8;
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
-
-.tarjeta-info-contacto {
-  background-color: #fce0e5; /* Fondo rosado pastel suave */
-  padding: 20px;
-  border-radius: 12px;
-  color: #4a4a4a;
-}
-
-.tarjeta-info-contacto h5 {
-  font-size: 15px;
-  font-weight: bold;
-  margin-bottom: 10px;
-  color: #333333;
-  text-align: center;
-}
-
-.tarjeta-info-contacto p {
-  font-size: 13px;
-  margin-bottom: 8px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.tarjeta-info-contacto p i {
-  color: #b46d78;
-}
-
-.iconos-sociales-contacto {
-  display: flex;
-  justify-content: center;
-  gap: 25px;
-  font-size: 24px;
-  margin-top: 5px;
-}
-
-.iconos-sociales-contacto a {
-  color: #b46d78;
-  transition: color 0.3s;
-}
-
-.iconos-sociales-contacto a:hover {
-  color: #96545f;
-}
-
-/* Ajuste Responsivo para pantallas pequeñas */
-@media (max-width: 768px) {
-  .bloque-contacto {
-    flex-direction: column;
+/* DISPOSITIVOS MÓVILES MUY PEQUEÑOS (Menos de 480px) */
+@media (max-width: 480px) {
+  .menu-navegacion > ul {
+    flex-direction: column; /* Menú vertical para pantallas súper compactas */
+    align-items: center;
+    gap: 5px;
   }
-}
-
-/* REGLA REQUERIDA PARA ALINEAR LA IMAGEN DEL LOGO AL MENÚ (Petición anterior) */
-.contenedor-navegacion {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  gap: 50px;
-}
-
-.iconos-navegacion {
-  margin-left: auto;
-}
-/* AJUSTE DEL CONTENEDOR FLOTANTE CENTRAL */
-.envoltorio-principal {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-  position: relative;
-  /* Quitamos cualquier margen superior excesivo que esté empujando el contenido hacia abajo */
-  margin-top: 0;
-}
-
-/* AJUSTE ESPECÍFICO PARA LA VISTA DE CONTACTO */
-.seccion-contacto {
-  background-color: #ffffff;
-  padding: 40px 30px;
-  border-radius: 8px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-
-  /* Agregamos un margen superior controlado para que respire, pero sin dejar un hueco gigante */
-  margin-top: 40px;
-  margin-bottom: 40px;
+  .cuadracula-productos {
+    grid-template-columns: 1fr; /* Una columna por producto */
+  }
+  .contenido-banner h1 {
+    font-size: 26px;
+  }
 }

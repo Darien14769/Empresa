@@ -5,27 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Accesorios E&C - Joyería Atemporal</title>
 
-    <!-- VÍNCULO CON TU ARCHIVO CSS -->
     <link rel="stylesheet" href="documento.css" />
 
-    <!-- Font Awesome para los iconos de la interfaz -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
   </head>
   <body>
-    <!-- BARRA DE NAVEGACIÓN SUPERIOR -->
     <header class="barra-navegacion">
       <div class="contenedor-navegacion">
         <div class="logotipo">
           <div class="imagen-logotipo">
-            <img src="logoEmpresa.jpeg" alt="Logo Empresa E&C" />
+            <picture>
+              <source
+                media="(max-width: 768px)"
+                srcset="logoEmpresa-movil.jpeg"
+              />
+              <img src="logoEmpresa.jpeg" alt="Logo Empresa E&C" />
+            </picture>
           </div>
         </div>
         <nav class="menu-navegacion">
           <ul>
-            <!-- HASHES AÑADIDOS EN LOS ENLACES -->
             <li><a href="#inicio">INICIO</a></li>
             <li class="desplegable">
               <a href="#productos" class="boton-desplegable"
@@ -53,16 +55,23 @@
       </div>
     </header>
 
-    <!-- BANNER PRINCIPAL (HERO) - Vista asociada a #inicio -->
     <section id="vista-banner" class="banner-principal">
       <div class="capa-oscura"></div>
       <div class="contenedor-banner">
         <div class="lado-decorativo">
-          <img
-            src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&q=80&w=600"
-            alt="Rosas Blancas"
-            class="flores-banner"
-          />
+          <picture>
+            <source
+              media="(max-width: 768px)"
+              srcset="
+                https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&q=80&w=400&h=600
+              "
+            />
+            <img
+              src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&q=80&w=600"
+              alt="Rosas Blancas"
+              class="flores-banner"
+            />
+          </picture>
         </div>
         <div class="contenido-banner">
           <h2>DESCUBRE TU BRILLO.</h2>
@@ -72,9 +81,7 @@
       </div>
     </section>
 
-    <!-- ENVOLTORIO CENTRAL FLOTANTE -->
     <div class="envoltorio-principal">
-      <!-- SECCIÓN TIKTOK CAROUSEL - Vista asociada a #inicio -->
       <section id="vista-tiktok" class="seccion-tiktok">
         <h2 class="titulo-seccion">TUS FAVORITOS EN TIKTOK</h2>
         <div class="contenedor-carrusel">
@@ -84,30 +91,54 @@
           <div class="ruta-carrusel">
             <div class="tarjeta-tiktok">
               <div class="marco-celular">
-                <img
-                  src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&q=80&w=400"
-                  alt="TikTok Look 1"
-                />
+                <picture>
+                  <source
+                    media="(max-width: 480px)"
+                    srcset="
+                      https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&q=80&w=300
+                    "
+                  />
+                  <img
+                    src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&q=80&w=400"
+                    alt="TikTok Look 1"
+                  />
+                </picture>
                 <span class="usuario-tiktok">@accesorios_ec_oficial</span>
               </div>
               <a href="#" class="boton-secundario">COMPRAR ESTE LOOK</a>
             </div>
             <div class="tarjeta-tiktok">
               <div class="marco-celular">
-                <img
-                  src="https://images.unsplash.com/photo-1601121141461-9d6647bca1ed?auto=format&fit=crop&q=80&w=400"
-                  alt="TikTok Look 2"
-                />
+                <picture>
+                  <source
+                    media="(max-width: 480px)"
+                    srcset="
+                      https://images.unsplash.com/photo-1601121141461-9d6647bca1ed?auto=format&fit=crop&q=80&w=300
+                    "
+                  />
+                  <img
+                    src="https://images.unsplash.com/photo-1601121141461-9d6647bca1ed?auto=format&fit=crop&q=80&w=400"
+                    alt="TikTok Look 2"
+                  />
+                </picture>
                 <span class="usuario-tiktok">@accesorios_ec_oficial</span>
               </div>
               <a href="#" class="boton-secundario">COMPRAR ESTE LOOK</a>
             </div>
             <div class="tarjeta-tiktok">
               <div class="marco-celular">
-                <img
-                  src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&q=80&w=400"
-                  alt="TikTok Look 3"
-                />
+                <picture>
+                  <source
+                    media="(max-width: 480px)"
+                    srcset="
+                      https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&q=80&w=300
+                    "
+                  />
+                  <img
+                    src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&q=80&w=400"
+                    alt="TikTok Look 3"
+                  />
+                </picture>
                 <span class="usuario-tiktok">@accesorios_ec_oficial</span>
               </div>
               <a href="#" class="boton-secundario">COMPRAR ESTE LOOK</a>
@@ -119,16 +150,23 @@
         </div>
       </section>
 
-      <!-- SECCIÓN PRODUCTOS DESTACADOS - Vista asociada a #productos -->
       <section id="vista-productos" class="seccion-productos">
         <h2 class="titulo-seccion">PRODUCTOS DESTACADOS</h2>
         <div class="cuadracula-productos">
           <div class="tarjeta-producto">
             <div class="contenedor-imagen-producto">
-              <img
-                src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&q=80&w=400"
-                alt="Layered Star Choker"
-              />
+              <picture>
+                <source
+                  media="(max-width: 600px)"
+                  srcset="
+                    https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&q=80&w=250
+                  "
+                />
+                <img
+                  src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&q=80&w=400"
+                  alt="Layered Star Choker"
+                />
+              </picture>
             </div>
             <div class="informacion-producto">
               <h3>Layered Star Choker</h3>
@@ -138,10 +176,18 @@
           </div>
           <div class="tarjeta-producto">
             <div class="contenedor-imagen-producto">
-              <img
-                src="https://images.unsplash.com/photo-1635767798638-3e25273a8236?auto=format&fit=crop&q=80&w=400"
-                alt="Gold Hoop Set"
-              />
+              <picture>
+                <source
+                  media="(max-width: 600px)"
+                  srcset="
+                    https://images.unsplash.com/photo-1635767798638-3e25273a8236?auto=format&fit=crop&q=80&w=250
+                  "
+                />
+                <img
+                  src="https://images.unsplash.com/photo-1635767798638-3e25273a8236?auto=format&fit=crop&q=80&w=400"
+                  alt="Gold Hoop Set"
+                />
+              </picture>
             </div>
             <div class="informacion-producto">
               <h3>Gold Hoop Set</h3>
@@ -152,7 +198,6 @@
         </div>
       </section>
 
-      <!-- NUEVA SECCIÓN DE CONTACTO (Basada en image_93023d.jpg) - Vista asociada a #contacto -->
       <section id="vista-contacto" class="seccion-contacto">
         <div class="encabezado-contacto">
           <h2>¡HABLEMOS!</h2>
@@ -161,9 +206,7 @@
             Escríbenos.
           </p>
         </div>
-
         <div class="bloque-contacto">
-          <!-- Formulario Izquierdo -->
           <form class="formulario-contacto" onsubmit="event.preventDefault()">
             <input type="text" placeholder="Tu Nombre" required />
             <input type="email" placeholder="Tu Email" required />
@@ -177,20 +220,16 @@
               [ENVIAR MENSAJE]
             </button>
           </form>
-
-          <!-- Tarjetas de Información Derecha -->
           <div class="tarjetas-informacion-contacto">
             <div class="tarjeta-info-contacto">
               <h5>Atención al Cliente</h5>
               <p><i class="fa-solid fa-envelope"></i> hola@accesorioscyc.com</p>
               <p><i class="fa-solid fa-phone"></i> +54 11 5555-0123</p>
             </div>
-
             <div class="tarjeta-info-contacto">
               <h5>Horarios</h5>
               <p>Lunes a Viernes: 9:00 AM - 6:00 PM</p>
             </div>
-
             <div class="tarjeta-info-contacto">
               <h5>Social</h5>
               <div class="iconos-sociales-contacto">
@@ -203,7 +242,6 @@
       </section>
     </div>
 
-    <!-- PIE DE PÁGINA (DORADO) -->
     <footer class="pie-pagina">
       <div class="contenedor-pie">
         <div class="enlaces-pie">
@@ -235,12 +273,10 @@
       </div>
     </footer>
 
-    <!-- BOTÓN FLOTANTE WHATSAPP -->
     <a href="#" class="whatsapp-flotante">
       <i class="fa-brands fa-whatsapp"></i>
     </a>
 
-    <!-- VÍNCULO CON TU ARCHIVO JAVASCRIPT -->
     <script src="documento.js"></script>
   </body>
 </html>
